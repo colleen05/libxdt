@@ -8,7 +8,7 @@ then
 fi
 
 # Introduction
-echo "Building libsphynx [linux]..."
+echo "Building libxdt [linux]..."
 
 # Setting up directories
 echo "Creating directories..."
@@ -16,11 +16,11 @@ mkdir -p tmp
 
 # Compiling
 echo "Compiling object files..."
-${CXX} -c -o tmp/sphynx.o src/sphynx.cpp -Iinclude -std=c++17
+${CXX} -c -o tmp/libxdt.o src/libxdt.cpp -Iinclude -std=c++17
 
 echo "Building static library..."
-rm bin/libsphynx.a
-ar rcs bin/libsphynx.a tmp/sphynx.o
+rm bin/libxdt.a
+ar rcs bin/libxdt.a tmp/libxdt.o
 
 # Cleaning up
 echo "Removing temporary directories..."
