@@ -1,0 +1,5 @@
+bin/*
+src/Main.cpp
+build_example.sh
+
+!**/.gitkeep
