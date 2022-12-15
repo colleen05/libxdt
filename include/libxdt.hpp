@@ -163,9 +163,47 @@ namespace xdt {
             HeaderInfo headerInfo; //!< Header information such as version, flags, and the number of table items.
             std::vector<std::pair<std::string, Item>> directory; //!< The container for all items, indexed by name.
 
+            // Getters
+            uint8_t     GetByte     (std::string itemName); //!< Returns value casted to a byte, **0x00** if types are incompatible.
+            bool        GetBool     (std::string itemName); //!< Returns value casted to a boolean, **false** if types are incompatible.
+            int16_t     GetInt16    (std::string itemName); //!< Returns value casted to a signed 16-bit integer, **0** if types are incompatible.
+            uint16_t    GetUint16   (std::string itemName); //!< Returns value casted to an unsigned 16-bit integer, **0** if types are incompatible.
+            int32_t     GetInt32    (std::string itemName); //!< Returns value casted to a signed 32-bit integer, **0** if types are incompatible.
+            uint32_t    GetUint32   (std::string itemName); //!< Returns value casted to an unsigned 32-bit integer, **0** if types are incompatible.
+            int64_t     GetInt64    (std::string itemName); //!< Returns value casted to a signed 64-bit integer, **0** if types are incompatible.
+            uint64_t    GetUint64   (std::string itemName); //!< Returns value casted to an unsigned 64-bit integer, **0** if types are incompatible.
+            float       GetFloat    (std::string itemName); //!< Returns value casted to a floating-point number, **0.0f** if types are incompatible.
+            double      GetDouble   (std::string itemName); //!< Returns value casted to a double-precision floating-point number, **0.0** if types are incompatible.
+            std::chrono::seconds GetTimestamp(std::string itemName);  //!< Returns value casted to seconds since January 1st, 1970, **0s** if types are incompatible.
+            std::string          GetString(std::string itemName, bool asHex = false); //!< Returns value casted to a string, empty if types are incompatible.
+            std::vector<uint8_t> GetBytes(std::string itemName);      //!< Returns raw bytes of value.
+
+            // Setters
+            bool SetByte      (std::string itemName, uint8_t  value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+            bool SetBool      (std::string itemName, bool     value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+            bool SetInt16     (std::string itemName, int16_t  value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+            bool SetUint16    (std::string itemName, uint16_t value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+            bool SetInt32     (std::string itemName, int32_t  value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+            bool SetUint32    (std::string itemName, uint32_t value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+            bool SetInt64     (std::string itemName, int64_t  value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+            bool SetUint64    (std::string itemName, uint64_t value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+            bool SetFloat     (std::string itemName, float    value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+            bool SetDouble    (std::string itemName, double   value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+            bool SetTimestamp (std::string itemName, std::chrono::seconds value, bool isLong = false, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+            bool SetString    (std::string itemName, std::string          value, bool isUTF8 = false, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+            bool SetBytes     (std::string itemName, std::vector<uint8_t> value, bool isFileData = false, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+
+            // Serialisation
             std::vector<uint8_t> Serialise(); //!< Returns an XDT-formatted byte array of the table.
             bool Deserialise(std::vector<uint8_t> data); //!< Loads data from an XDT-formatted byte array.
 
+            // File IO
+            void Save(std::string filename); //!< Save serialised data.
+            bool Load(std::string filename); //!< Load XDT file.
+
+            // Constructors
+            Table(std::vector<uint8_t> data);
+            Table(std::string filename);
             Table(HeaderInfo header);
             Table();
     };
