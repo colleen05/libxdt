@@ -184,19 +184,19 @@ namespace xdt {
             std::vector<uint8_t> GetBytes(std::string itemName);      //!< Returns raw bytes of value.
 
             // Setters
-            bool SetByte      (std::string itemName, uint8_t  value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
-            bool SetBool      (std::string itemName, bool     value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
-            bool SetInt16     (std::string itemName, int16_t  value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
-            bool SetUint16    (std::string itemName, uint16_t value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
-            bool SetInt32     (std::string itemName, int32_t  value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
-            bool SetUint32    (std::string itemName, uint32_t value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
-            bool SetInt64     (std::string itemName, int64_t  value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
-            bool SetUint64    (std::string itemName, uint64_t value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
-            bool SetFloat     (std::string itemName, float    value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
-            bool SetDouble    (std::string itemName, double   value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
-            bool SetTimestamp (std::string itemName, std::chrono::seconds value, bool isLong = false, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
-            bool SetString    (std::string itemName, std::string          value, bool isUTF8 = false, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
-            bool SetBytes     (std::string itemName, std::vector<uint8_t> value, bool isFileData = false, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+            void SetByte      (std::string itemName, uint8_t  value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+            void SetBool      (std::string itemName, bool     value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+            void SetInt16     (std::string itemName, int16_t  value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+            void SetUint16    (std::string itemName, uint16_t value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+            void SetInt32     (std::string itemName, int32_t  value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+            void SetUint32    (std::string itemName, uint32_t value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+            void SetInt64     (std::string itemName, int64_t  value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+            void SetUint64    (std::string itemName, uint64_t value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+            void SetFloat     (std::string itemName, float    value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+            void SetDouble    (std::string itemName, double   value, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+            void SetTimestamp (std::string itemName, std::chrono::seconds value, bool isLong = false, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+            void SetString    (std::string itemName, std::string          value, bool isUTF8 = false, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
+            void SetBytes     (std::string itemName, std::vector<uint8_t> value, bool isFileData = false, bool overwriteType = false); //!< Attempts to set the value to the supplied value.
 
             // Serialisation
             std::vector<uint8_t> Serialise(); //!< Returns an XDT-formatted byte array of the table.

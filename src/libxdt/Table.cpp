@@ -86,82 +86,160 @@ std::vector<uint8_t> xdt::Table::GetBytes(std::string itemName) {
 }
 
 // Setters
-bool xdt::Table::SetByte(std::string itemName, uint8_t value, bool overwriteType) {
+void xdt::Table::SetByte(std::string itemName, uint8_t value, bool overwriteType) {
     auto item = GetItem(itemName);
-    if(item == nullptr) return false;
-    item->SetByte(value, overwriteType);
+
+    if(item == nullptr) {
+        item = new Item {};
+        item->SetByte(value, true);
+        directory.push_back(std::make_pair(itemName, *item));
+    }else {
+        item->SetByte(value, overwriteType);
+    }
 }
 
-bool xdt::Table::SetBool(std::string itemName, bool value, bool overwriteType) {
+void xdt::Table::SetBool(std::string itemName, bool value, bool overwriteType) {
     auto item = GetItem(itemName);
-    if(item == nullptr) return false;
-    item->SetBool(value, overwriteType);
+
+    if(item == nullptr) {
+        item = new Item {};
+        item->SetBool(value, true);
+        directory.push_back(std::make_pair(itemName, *item));
+    }else {
+        item->SetBool(value, overwriteType);
+    }
 }
 
-bool xdt::Table::SetInt16(std::string itemName, int16_t value, bool overwriteType) {
+void xdt::Table::SetInt16(std::string itemName, int16_t value, bool overwriteType) {
     auto item = GetItem(itemName);
-    if(item == nullptr) return false;
-    item->SetInt16(value, overwriteType);
+
+    if(item == nullptr) {
+        item = new Item {};
+        item->SetInt16(value, true);
+        directory.push_back(std::make_pair(itemName, *item));
+    }else {
+        item->SetInt16(value, overwriteType);
+    }
 }
 
-bool xdt::Table::SetUint16(std::string itemName, uint16_t value, bool overwriteType) {
+void xdt::Table::SetUint16(std::string itemName, uint16_t value, bool overwriteType) {
     auto item = GetItem(itemName);
-    if(item == nullptr) return false;
-    item->SetUint16(value, overwriteType);
+
+    if(item == nullptr) {
+        item = new Item {};
+        item->SetUint16(value, true);
+        directory.push_back(std::make_pair(itemName, *item));
+    }else {
+        item->SetUint16(value, overwriteType);
+    }
 }
 
-bool xdt::Table::SetInt32(std::string itemName, int32_t value, bool overwriteType) {
+void xdt::Table::SetInt32(std::string itemName, int32_t value, bool overwriteType) {
     auto item = GetItem(itemName);
-    if(item == nullptr) return false;
-    item->SetInt32(value, overwriteType);
+
+    if(item == nullptr) {
+        item = new Item {};
+        item->SetInt32(value, true);
+        directory.push_back(std::make_pair(itemName, *item));
+    }else {
+        item->SetInt32(value, overwriteType);
+    }
 }
 
-bool xdt::Table::SetUint32(std::string itemName, uint32_t value, bool overwriteType) {
+void xdt::Table::SetUint32(std::string itemName, uint32_t value, bool overwriteType) {
     auto item = GetItem(itemName);
-    if(item == nullptr) return false;
-    item->SetUint32(value, overwriteType);
+
+    if(item == nullptr) {
+        item = new Item {};
+        item->SetUint32(value, true);
+        directory.push_back(std::make_pair(itemName, *item));
+    }else {
+        item->SetUint32(value, overwriteType);
+    }
 }
 
-bool xdt::Table::SetInt64(std::string itemName, int64_t value, bool overwriteType) {
+void xdt::Table::SetInt64(std::string itemName, int64_t value, bool overwriteType) {
     auto item = GetItem(itemName);
-    if(item == nullptr) return false;
-    item->SetInt64(value, overwriteType);
+
+    if(item == nullptr) {
+        item = new Item {};
+        item->SetInt64(value, true);
+        directory.push_back(std::make_pair(itemName, *item));
+    }else {
+        item->SetInt64(value, overwriteType);
+    }
 }
 
-bool xdt::Table::SetUint64(std::string itemName, uint64_t value, bool overwriteType) {
+void xdt::Table::SetUint64(std::string itemName, uint64_t value, bool overwriteType) {
     auto item = GetItem(itemName);
-    if(item == nullptr) return false;
-    item->SetUint64(value, overwriteType);
+
+    if(item == nullptr) {
+        item = new Item {};
+        item->SetUint64(value, true);
+        directory.push_back(std::make_pair(itemName, *item));
+    }else {
+        item->SetUint64(value, overwriteType);
+    }
 }
 
-bool xdt::Table::SetFloat(std::string itemName, float value, bool overwriteType) {
+void xdt::Table::SetFloat(std::string itemName, float value, bool overwriteType) {
     auto item = GetItem(itemName);
-    if(item == nullptr) return false;
-    item->SetFloat(value, overwriteType);
+
+    if(item == nullptr) {
+        item = new Item {};
+        item->SetFloat(value, true);
+        directory.push_back(std::make_pair(itemName, *item));
+    }else {
+        item->SetFloat(value, overwriteType);
+    }
 }
 
-bool xdt::Table::SetDouble(std::string itemName, double value, bool overwriteType) {
+void xdt::Table::SetDouble(std::string itemName, double value, bool overwriteType) {
     auto item = GetItem(itemName);
-    if(item == nullptr) return false;
-    item->SetDouble(value, overwriteType);
+
+    if(item == nullptr) {
+        item = new Item {};
+        item->SetDouble(value, true);
+        directory.push_back(std::make_pair(itemName, *item));
+    }else {
+        item->SetDouble(value, overwriteType);
+    }
 }
 
-bool xdt::Table::SetTimestamp(std::string itemName, std::chrono::seconds value, bool isLong, bool overwriteType) {
+void xdt::Table::SetTimestamp(std::string itemName, std::chrono::seconds value, bool isLong, bool overwriteType) {
     auto item = GetItem(itemName);
-    if(item == nullptr) return false;
-    item->SetTimestamp(value, isLong, overwriteType);
+
+    if(item == nullptr) {
+        item = new Item {};
+        item->SetTimestamp(value, isLong, true);
+        directory.push_back(std::make_pair(itemName, *item));
+    }else {
+        item->SetTimestamp(value, isLong, overwriteType);
+    }
 }
 
-bool xdt::Table::SetString(std::string itemName, std::string value, bool isUTF8, bool overwriteType) {
+void xdt::Table::SetString(std::string itemName, std::string value, bool isUTF8, bool overwriteType) {
     auto item = GetItem(itemName);
-    if(item == nullptr) return false;
-    item->SetString(value, isUTF8, overwriteType);
+
+    if(item == nullptr) {
+        item = new Item {};
+        item->SetString(value, isUTF8, true);
+        directory.push_back(std::make_pair(itemName, *item));
+    }else {
+        item->SetString(value, isUTF8, overwriteType);
+    }
 }
 
-bool xdt::Table::SetBytes(std::string itemName, std::vector<uint8_t> value, bool isFileData, bool overwriteType) {
+void xdt::Table::SetBytes(std::string itemName, std::vector<uint8_t> value, bool isFileData, bool overwriteType) {
     auto item = GetItem(itemName);
-    if(item == nullptr) return false;
-    item->SetBytes(value, isFileData, overwriteType);
+
+    if(item == nullptr) {
+        item = new Item {};
+        item->SetBytes(value, isFileData, true);
+        directory.push_back(std::make_pair(itemName, *item));
+    }else {
+        item->SetBytes(value, isFileData, overwriteType);
+    }
 }
 
 // Serialisation
@@ -379,9 +457,9 @@ bool xdt::Table::Deserialise(std::vector<uint8_t> data) {
             return false;
         }
 
-        xdt::Item *item = GetItem(blobName);
+        xdt::Item *item = tempTable.GetItem(blobName);
 
-        if(!item) {
+        if(item == nullptr) {
             errorStatus = "Unknown error occured.";
             return false;
         }
@@ -398,6 +476,8 @@ bool xdt::Table::Deserialise(std::vector<uint8_t> data) {
     //*** Finalise ***//
     headerInfo = tempTable.headerInfo;
     directory = tempTable.directory;
+
+    return true;
 }
 
 // File IO
@@ -420,7 +500,7 @@ bool xdt::Table::Load(std::string filename) {
 
     f.close();
 
-    Deserialise(inBytes);
+    return Deserialise(inBytes);
 }
 
 // Constructors
