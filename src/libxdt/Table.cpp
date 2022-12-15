@@ -1,5 +1,6 @@
 #include <libxdt.hpp>
 
+// Serialisation
 std::vector<uint8_t> xdt::Table::Serialise() {
     //*** Section byte vectors ***//
     std::vector<uint8_t> xdtData;
@@ -237,6 +238,38 @@ bool xdt::Table::Deserialise(std::vector<uint8_t> data) {
     //*** Finalise ***//
     headerInfo = tempTable.headerInfo;
     directory = tempTable.directory;
+}
+
+// File IO
+void xdt::Table::Save(std::string filename) {
+    auto outBytes = Serialise();
+
+    std::ofstream f(filename, std::ios::binary);
+    for(auto b : outBytes) { f << b; }
+
+    f.close();
+}
+
+bool xdt::Table::Load(std::string filename) {
+    std::ifstream f("out.xdt", std::ios::binary);
+
+    auto inBytes = std::vector<uint8_t>(
+        std::istreambuf_iterator<char>(f),
+        std::istreambuf_iterator<char>()
+    );
+
+    f.close();
+
+    Deserialise(inBytes);
+}
+
+// Constructors
+xdt::Table::Table(std::vector<uint8_t> data) {
+    Deserialise(data);
+}
+
+xdt::Table::Table(std::string filename) {
+    Load(filename);
 }
 
 xdt::Table::Table(HeaderInfo header) {
