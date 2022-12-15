@@ -163,6 +163,11 @@ namespace xdt {
             HeaderInfo headerInfo; //!< Header information such as version, flags, and the number of table items.
             std::vector<std::pair<std::string, Item>> directory; //!< The container for all items, indexed by name.
 
+            // General item stuff
+            xdt::Item *GetItem(std::string itemName); //!< Returns pointer to item if found
+            bool ItemExists(std::string itemName); //!< Returns **true** if item is found
+            xdt::ItemType GetItemType(std::string itemName); //!< Returns type of item if found
+
             // Getters
             uint8_t     GetByte     (std::string itemName); //!< Returns value casted to a byte, **0x00** if types are incompatible.
             bool        GetBool     (std::string itemName); //!< Returns value casted to a boolean, **false** if types are incompatible.
