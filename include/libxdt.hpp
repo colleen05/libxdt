@@ -164,7 +164,7 @@ namespace xdt {
             std::vector<std::pair<std::string, Item>> directory; //!< The container for all items, indexed by name.
 
             std::vector<uint8_t> Serialise(); //!< Returns an XDT-formatted byte array of the table.
-            void Deserialise(std::vector<uint8_t> data); //!< Loads data from an XDT-formatted byte array.
+            bool Deserialise(std::vector<uint8_t> data); //!< Loads data from an XDT-formatted byte array.
 
             Table(HeaderInfo header);
             Table();
