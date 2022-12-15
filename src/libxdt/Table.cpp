@@ -79,7 +79,7 @@ std::vector<uint8_t> xdt::Table::Serialise() {
     return xdtData;
 }
 
-void xdt::Table::Deserialise(std::vector<uint8_t> data) {
+bool xdt::Table::Deserialise(std::vector<uint8_t> data) {
     //*** Section byte vectors ***//
     const size_t headerSize = 10;
 
@@ -100,7 +100,7 @@ void xdt::Table::Deserialise(std::vector<uint8_t> data) {
 
     if(hdr_magic != XDT_MAGIC) {
         errorStatus = "File not marked as XDT.";
-        return;
+        return false;
     }
 
     uint16_t hdr_version =
@@ -130,7 +130,10 @@ void xdt::Table::Deserialise(std::vector<uint8_t> data) {
     size_t currentOffset = headerSize + directoryData.size();
 
     while(currentItem < hdr_itemCount) {
-        if(currentOffset > data.size()) return;
+        if(currentOffset > data.size()) {
+            errorStatus = "Reached EOF while reading directory.";
+            return false;
+        }
 
         xdt::Item tempItem;
 
@@ -206,6 +209,11 @@ void xdt::Table::Deserialise(std::vector<uint8_t> data) {
 
     //*** BLOB Data ***//
     for(auto &[blobName, blobSize] : blobItems) {
+        if(currentOffset > data.size()) {
+            errorStatus = "Reached EOF while reading BLOB data.";
+            return false;
+        }
+
         xdt::Item *item;
 
         for(auto &entry : tempTable.directory) {
@@ -214,7 +222,7 @@ void xdt::Table::Deserialise(std::vector<uint8_t> data) {
 
         if(!item) {
             errorStatus = "Unknown error occured.";
-            return;
+            return false;
         }
 
         item->data.insert(
