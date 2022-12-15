@@ -16,11 +16,12 @@ mkdir -p tmp
 
 # Compiling
 echo "Compiling object files..."
-${CXX} -c -o tmp/libxdt.o src/libxdt.cpp -Iinclude -std=c++17
+${CXX} -c -O3 -o tmp/Item.o src/libxdt/Item.cpp -Iinclude -std=c++17
+${CXX} -c -O3 -o tmp/Table.o src/libxdt/Table.cpp -Iinclude -std=c++17
 
 echo "Building static library..."
 rm bin/libxdt.a
-ar rcs bin/libxdt.a tmp/libxdt.o
+ar rcs bin/libxdt.a tmp/Item.o tmp/Table.o
 
 # Cleaning up
 echo "Removing temporary directories..."
