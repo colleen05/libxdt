@@ -5,7 +5,7 @@
   <a href="#features">Features </a>•
   <a href="#supported-types">Types </a>•
   <a href="#example-code">Examples </a>•
-  <a href="#building--using">Building & Using</a>•
+  <a href="#building--using">Building & Using </a>•
   <a href="#format">Format</a>
 </p>
 
