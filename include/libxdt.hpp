@@ -205,10 +205,10 @@ namespace xdt {
             bool Load(std::string filename); //!< Load XDT file.
 
             // Constructors
-            Table(std::vector<uint8_t> data);
-            Table(std::string filename);
-            Table(HeaderInfo header);
-            Table();
+            Table(std::vector<uint8_t> data);   //!< Construct and load from XDT-formatted data.
+            Table(std::string filename);        //!< Construct and load from a file.
+            Table(HeaderInfo header);           //!< Construct with given header configuration.
+            Table();                            //!< Construct with default header configuration.
     };
 
     /*! @brief Compress bytes using run-length encoding (RLE).
