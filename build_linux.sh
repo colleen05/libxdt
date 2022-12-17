@@ -16,9 +16,9 @@ mkdir -p tmp
 
 # Compiling
 echo "Compiling object files..."
-${CXX} -g -c -O3 -o tmp/Item.o src/libxdt/Item.cpp -Iinclude -std=c++17
-${CXX} -g -c -O3 -o tmp/Table.o src/libxdt/Table.cpp -Iinclude -std=c++17
-${CXX} -g -c -O3 -o tmp/Compression.o src/libxdt/Compression.cpp -Iinclude -std=c++17
+${CXX} -c -O3 -o tmp/Item.o src/libxdt/Item.cpp -Iinclude -std=c++17
+${CXX} -c -O3 -o tmp/Table.o src/libxdt/Table.cpp -Iinclude -std=c++17
+${CXX} -c -O3 -o tmp/Compression.o src/libxdt/Compression.cpp -Iinclude -std=c++17
 
 echo "Building static library..."
 rm bin/libxdt.a
