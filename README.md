@@ -1,6 +1,5 @@
-<center>
-![LibXDT Logo](/img/logo.png)
-</center>
+<div stlye="align: center">![LibXDT Logo](/img/logo.png)
+</div>
 
 
 # About
