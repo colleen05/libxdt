@@ -19,7 +19,7 @@
 
 #define XDT_MAGIC 0x00584454 //!< 4-byte sequence used at the beginning of a file to declare it is XDT-formatted.
 
-#define XDT_ITEM_COMPRESION(flags) (flags.low & 0b11000000)
+#define XDT_GET_ITEM_COMPRESION(flags) (flags.low & 0b11000000) //!< Returns the 2-bit compression bitfield within an ItemFlags struct.
 
 namespace xdt {
     /*! @brief Bitfield for header flags

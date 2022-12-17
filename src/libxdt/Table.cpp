@@ -294,7 +294,7 @@ std::vector<uint8_t> xdt::Table::Serialise() {
 
         if(isBlob) {
             // Append value data to blob section
-            if(XDT_ITEM_COMPRESION(item.flags) == 0b01) {
+            if(XDT_GET_ITEM_COMPRESION(item.flags) == 0b01) {
                 std::vector<uint8_t> compressed = CompressRLE(item.data);
                 blobData.insert(blobData.end(), compressed.begin(), compressed.end());
             }else {
@@ -480,7 +480,7 @@ bool xdt::Table::Deserialise(std::vector<uint8_t> data) {
         );
 
         // Decompress if necesarry
-        if(XDT_ITEM_COMPRESION(item->flags) == 0b01) {
+        if(XDT_GET_ITEM_COMPRESION(item->flags) == 0b01) {
             item->data = DecompressRLE(item->data);
         }
 
