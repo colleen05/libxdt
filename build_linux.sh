@@ -18,10 +18,11 @@ mkdir -p tmp
 echo "Compiling object files..."
 ${CXX} -c -O3 -o tmp/Item.o src/libxdt/Item.cpp -Iinclude -std=c++17
 ${CXX} -c -O3 -o tmp/Table.o src/libxdt/Table.cpp -Iinclude -std=c++17
+${CXX} -c -O3 -o tmp/Compression.o src/libxdt/Compression.cpp -Iinclude -std=c++17
 
 echo "Building static library..."
 rm bin/libxdt.a
-ar rcs bin/libxdt.a tmp/Item.o tmp/Table.o
+ar rcs bin/libxdt.a tmp/Item.o tmp/Table.o tmp/Compression.o
 
 # Cleaning up
 echo "Removing temporary directories..."
