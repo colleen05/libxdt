@@ -328,6 +328,11 @@ std::vector<uint8_t> xdt::Table::Serialise() {
 }
 
 bool xdt::Table::Deserialise(std::vector<uint8_t> data) {
+    if(data.empty()) {
+        errorStatus = "Empty data vector.";
+        return false;
+    }
+
     //*** Section byte vectors ***//
     const size_t headerSize = 10;
 

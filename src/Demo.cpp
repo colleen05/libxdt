@@ -104,17 +104,17 @@ void FileIODemo() {
     }
 
     clock_t serialiseTimer_start = clock();
-    //auto outBytes = outTable.Serialise();
+    auto outBytes = outTable.Serialise();
     clock_t serialiseTimer_end = clock();
 
-    // std::ofstream f_out("out.xdt", std::ios::binary);
-    // for(auto b : outBytes) { f_out << b; }
+    std::ofstream f_out("out.xdt", std::ios::binary);
+    for(auto b : outBytes) { f_out << b; }
 
     clock_t serialiseTimer_end2 = clock();
 
-    // std::cout << "Wrote " << outBytes.size() << " bytes to file 'out.xdt'." << std::endl;
+    std::cout << "Wrote " << outBytes.size() << " bytes to file 'out.xdt'." << std::endl;
 
-    // f_out.close();
+    f_out.close();
 
     // Input
     clock_t deserialiseTimer_start2 = clock();
