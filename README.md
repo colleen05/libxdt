@@ -5,7 +5,7 @@
   <a href="#features">Features </a>•
   <a href="#supported-types">Types </a>•
   <a href="#example-code">Examples </a>•
-  <a href="#building">Building </a>•
+  <a href="#building--using">Building & Using</a>•
   <a href="#format">Format</a>
 </p>
 
@@ -79,9 +79,22 @@ int main() {
 
 # Building & Using
 ## Linux
+### 1. Compiling
+Execute the `build_linux.sh` file, which will produce a `libxdt.a` file in the `bin` directory. If all is successful, you should see this:
+```
+$ ./build_linux.sh
+Building libxdt [linux]...
+Creating directories...
+Compiling object files...
+Building static library...
+Removing temporary directories...
+$ 
+```
+### 2. Using
+The produced `libxdt.a` file may be linked with your compiler with a `-lxdt` argument, provided that the path is given (ex: `-Llib`, where `./lib/libxdt.a` is the full relative path to the static library). Files in the `include` directory must also be included in your compiler (ex: `-Iinclude`, where `./include/libxdt.hpp` is the full relative path to the LibXDT header). See `build_demo_linux.sh` for an example of this.
 
 ## Windows
-I haven't made an official
+I haven't made an official Windows build script, but the provided `build_linux.sh` and `build_demo_linux.sh` files should be easy to convert into a Windows build script with minimal effort, provided you have some experience with both .sh and .bat, or experience with compilers.
 
 # Format
 XDT is a binary-formatted format. I've made two diagrams which briefly explain the specification.
