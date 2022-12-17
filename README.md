@@ -30,7 +30,49 @@ XDT supports **16 standard types**, summarised as follows:
 * Raw binary (with distinction between file-data and just raw binary)
 
 # Example code
+## 3. Writing values to a file
+```cpp
+#include <libxdt.hpp>
 
+int main() {
+    xdt::Table myTable;
+
+    outTable.SetByte      ("my_byte",           0x48,       true);
+    outTable.SetBool      ("my_bool",           true,       true);
+    outTable.SetInt16     ("my_int16",          -1234,      true);
+    outTable.SetUint16    ("my_uint16",         6502,       true);
+    outTable.SetInt32     ("my_int32",          -314159,    true);
+    outTable.SetUint32    ("my_uint32",         12345,      true);
+    outTable.SetInt64     ("my_int64",          -987654321, true);
+    outTable.SetUint64    ("my_uint64",         11235813,   true);
+    outTable.SetFloat     ("my_float",          3.14159f,   true);
+    outTable.SetDouble    ("my_double",         -0.012345,  true);
+    outTable.SetTimestamp ("my_timestamp",      std::chrono::seconds(1670971965),   false,  true);
+    outTable.SetTimestamp ("my_long_timestamp", std::chrono::seconds(1670971965),   true,   true);
+    outTable.SetString    ("my_string",         "Hello, world!",                    false,  true);
+    outTable.SetString    ("my_utf8_string",    "Cats🐈 are cool! 💖",              true,   true);
+    outTable.SetBytes     ("my_file_data",      std::vector<uint8_t>(fileString.begin(), fileString.end()), true, true);
+    outTable.SetBytes     ("my_raw_data",       {0x12, 0x34, 0x56, 0x78, 0x9A}, false, true);
+
+    myTable.Save("myTable.xdt");
+
+    return 0;
+}
+```
+## 2. Reading and iterating values from a file
+```cpp
+#include <libxdt.hpp>
+
+int main() {
+    xdt::Table myTable("myTable.xdt");
+
+    for(auto &[name, item] : myTable.directory) {
+        std::cout << xdt::GetTypeName(item.type) << ": " << item.name << " = " << item.GetString() << std::endl;
+    }
+
+    return 0;
+}
+```
 
 # Format
 XDT is a binary-formatted format. I've made two diagrams which briefly explain the specification.
