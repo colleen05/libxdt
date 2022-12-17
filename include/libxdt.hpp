@@ -74,11 +74,7 @@ namespace xdt {
     /*! @brief Vector of types which are BLOBs
      *  @note Any type needing more than 4 bytes of data is always a BLOB.
      */
-    const std::vector<ItemType> BLOBTypes = {
-        ItemType::Int64, ItemType::Uint64, ItemType::LongTimestamp,
-        ItemType::Double, ItemType::ASCIIString, ItemType::UTF8String,
-        ItemType::File, ItemType::Raw
-    };
+    const std::vector<ItemType> BLOBTypes = { ItemType::Int64, ItemType::Uint64, ItemType::LongTimestamp, ItemType::Double, ItemType::ASCIIString, ItemType::UTF8String, ItemType::File, ItemType::Raw};
 
     /*! @brief Get name of standard type
      *  @details Attempts to get the name of a given type.
@@ -212,4 +208,16 @@ namespace xdt {
             Table(HeaderInfo header);
             Table();
     };
+
+    /*! @brief Compress bytes using run-length encoding (RLE).
+     *  @param bytes The bytes to be compressed.
+     *  @returns Compressed bytes.
+     */
+    std::vector<uint8_t> CompressRLE(std::vector<uint8_t> &bytes);
+
+    /*! @brief Decompress bytes from RLE-compressed bytes.
+     *  @param bytes The bytes to be decompressed.
+     *  @returns Decompressed bytes.
+     */
+    std::vector<uint8_t> DecompressRLE(std::vector<uint8_t> &bytes);
 }
