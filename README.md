@@ -9,6 +9,7 @@
   <a href="#format">Format</a>
 </p>
 
+## **NOTE:** This library is pre-release, and some features are not implemented, such as compression. 
 
 # About
 The **LibXDT** C++ library provides functionality for reading, writing, and modifying XDT (e**X**tensive **D**ata **T**able) files. XDT is the successor to the [BSM](https://github.com/colleen05/bsmlib) format.
@@ -39,6 +40,13 @@ Here is some example code to get you started with using the LibXDT library.
 
 int main() {
     xdt::Table myTable;
+
+    std::string fileString =
+        "#include <stdio.h>\n\n"
+        "int main() {\n"
+        "    printf(\"Hello, world!\");\n"
+        "    return 0;\n"
+        "}";
 
     outTable.SetByte      ("my_byte",           0x48,       true);
     outTable.SetBool      ("my_bool",           true,       true);
