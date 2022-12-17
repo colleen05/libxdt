@@ -1,10 +1,6 @@
-<style>
-    .center {
-        align: center;
-    }
-</style>
-
-![LibXDT Logo](/img/logo.png){: .center }
+<p align="center">
+  <img src="img/logo.png">
+</p>
 
 
 # About
