@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1024" height="512" viewBox="0 0 512 256" xml:space="preserve">
+<desc>Created with Fabric.js 4.6.0</desc>
+<defs>
+</defs>
+<g transform="matrix(-1 0 0 -1 256 144.61)" id="2WQdrMhuVIpv3tLuEhEf4"  >
+<path style="stroke: rgb(170,102,255); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(85,17,136); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  transform=" translate(-240, -80)" d="M 244.9944 0 C 356.1192 0 450.0396 30.3264 480 71.8448 C 435.3372 47.26240000000001 363.8232 31.326400000000007 283.2708 31.326400000000007 C 148.03320000000002 31.326400000000007 38.27520000000001 76.2416 38.27520000000001 131.5856 C 38.27520000000001 141.4544 41.764800000000015 150.9904 48.26640000000001 160 C 17.946000000000012 143.312 1.4210854715202004e-14 122.63839999999999 1.4210854715202004e-14 100.25919999999999 C 1.4210854715202004e-14 44.916799999999995 109.75800000000001 -1.4210854715202004e-14 244.99560000000002 -1.4210854715202004e-14 z" stroke-linecap="round" />
+</g>
+<g transform="matrix(1 0 0 1 256.01 128)" style="" id="pf6BHJQyZwnsU8z2L0Ntv"  >
+		<text xml:space="preserve" font-family="Open Sans" font-size="120" font-style="normal" font-weight="700" letter-spacing="0.96" line-height="1" style="stroke: rgb(136,68,221); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(170,102,255); fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-211.76" y="42.11" >L</tspan><tspan x="-143" y="42.11" >i</tspan><tspan x="-105.42" y="42.11" >b</tspan><tspan x="-28.52" y="42.11" >X</tspan><tspan x="52.48" y="42.11" >D</tspan><tspan x="142.27" y="42.11" >T</tspan></text>
+</g>
+</svg>

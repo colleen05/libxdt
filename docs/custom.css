@@ -1,0 +1,34 @@
+html {
+    --primary-color:        #a6f !important;
+    --primary-dark-color:   #a6f !important;
+
+    --page-background-color:            #111 !important;
+    --page-foreground-color:            #ddd !important;
+
+    --side-nav-background: #8881 !important;
+
+    --fragment-background: #181828 !important;
+    --fragment-linenumber-background: #303038 !important;
+
+    --content-maxwidth: auto;
+    --side-nav-arrow-opacity: 0.75;
+
+    --top-height: 160px !important;
+}
+
+.item.selected {
+    background-color: #fff1 !important;
+}
+
+#projectname {
+    background-image: url('logo.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 64px;
+    color: #0000;
+}
+
+#projectlogo {
+    display: none;
+}

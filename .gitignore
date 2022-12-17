@@ -1,5 +1,6 @@
 .vscode/
-docs/
+docs/html/**
+docs/doxygen-awesome/**
 
 bin/*
 src/Main.cpp
