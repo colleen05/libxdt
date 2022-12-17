@@ -1,5 +1,11 @@
 <p align="center">
   <img src="img/logo.png">
+  <a href="#about">About</a>
+  <a href="#features">Features</a>
+  <a href="#supported-types">Types</a>
+  <a href="#example-code">Examples</a>
+  <a href="#building">Building</a>
+  <a href="#format">Format</a>
 </p>
 
 
