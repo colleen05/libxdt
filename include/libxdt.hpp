@@ -19,6 +19,8 @@
 
 #define XDT_MAGIC 0x00584454 //!< 4-byte sequence used at the beginning of a file to declare it is XDT-formatted.
 
+#define XDT_ITEM_COMPRESION(flags) (flags.low & 0b11000000)
+
 namespace xdt {
     /*! @brief Bitfield for header flags
      *  @details Contains information about how provided XDT-formatted data

@@ -294,7 +294,12 @@ std::vector<uint8_t> xdt::Table::Serialise() {
 
         if(isBlob) {
             // Append value data to blob section
-            blobData.insert(blobData.end(), item.data.begin(), item.data.end());
+            if(XDT_ITEM_COMPRESION(item.flags) == 0b01) {
+                std::vector<uint8_t> compressed = CompressRLE(item.data);
+                blobData.insert(blobData.end(), compressed.begin(), compressed.end());
+            }else {
+                blobData.insert(blobData.end(), item.data.begin(), item.data.end());
+            }
 
             // Push BLOB size to directory entry -- LITTLE-ENDIAN
             auto blobsize = item.data.size();
@@ -468,6 +473,11 @@ bool xdt::Table::Deserialise(std::vector<uint8_t> data) {
             data.begin() + currentOffset,
             data.begin() + currentOffset + blobSize
         );
+
+        // Decompress if necesarry
+        if(XDT_ITEM_COMPRESION(item->flags) == 0b01) {
+            item->data = DecompressRLE(item->data);
+        }
 
         currentOffset += blobSize;
     }
