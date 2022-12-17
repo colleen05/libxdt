@@ -81,6 +81,7 @@ int main() {
 ## Linux
 ### 1. Compiling
 **IMPORTANT:** You **MUST** have a `CXX` environment variable defined, and configured to be the path to your C++ compiler of choice.
+
 Execute the `build_linux.sh` file, which will produce a `libxdt.a` file in the `bin` directory. If all is successful, you should see this:
 ```
 $ ./build_linux.sh
