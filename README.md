@@ -1,4 +1,5 @@
-<div stlye="align: center">![LibXDT Logo](/img/logo.png)
+<div stlye="align: center">
+![LibXDT Logo](/img/logo.png)
 </div>
 
 
