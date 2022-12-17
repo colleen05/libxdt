@@ -9,7 +9,7 @@
   <a href="#format">Format</a>
 </p>
 
-## **NOTE:** This library is pre-release, and some features are not implemented, such as compression. 
+### **NOTE:** This library is pre-release, and some features are not implemented, such as compression. 
 
 # About
 The **LibXDT** C++ library provides functionality for reading, writing, and modifying XDT (e**X**tensive **D**ata **T**able) files. XDT is the successor to the [BSM](https://github.com/colleen05/bsmlib) format.
