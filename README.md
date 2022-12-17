@@ -30,7 +30,10 @@ XDT supports **16 standard types**, summarised as follows:
 * Raw binary (with distinction between file-data and just raw binary)
 
 # Example code
-## 3. Writing values to a file
+Here is some example code to get you started with using the LibXDT library.
+**NOTE:** There exists a `Demo.cpp` file in this repository, which demonstrates usage of this library in greater detail.
+
+## 1. Writing values to a file
 ```cpp
 #include <libxdt.hpp>
 
@@ -73,6 +76,12 @@ int main() {
     return 0;
 }
 ```
+
+# Building & Using
+## Linux
+
+## Windows
+I haven't made an official
 
 # Format
 XDT is a binary-formatted format. I've made two diagrams which briefly explain the specification.
