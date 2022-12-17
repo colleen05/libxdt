@@ -1,4 +1,7 @@
+<center>
 ![LibXDT Logo](/img/logo.png)
+</center>
+
 
 # About
 The **LibXDT** C++ library provides functionality for reading, writing, and modifying XDT (e**X**tensive **D**ata **T**able) files. XDT is the successor to the [BSM](https://github.com/colleen05/bsmlib) format.
@@ -8,7 +11,7 @@ XDT compiles multiple data objects and values (collectively, "items") into a sor
 
 The XDT format **is highly extendable**, with plenty of room for custom, domain-specific alterations of the format to use for their own purpose. XDT can support up to **128 custom types**, and there is room in both the header *and* directory entries for custom fields.
 
-## Supported types:
+## Supported types
 XDT supports **16 standard types**, summarised as follows:
 * Byte (unsigned)
 * Boolean (`bool`)
@@ -19,7 +22,10 @@ XDT supports **16 standard types**, summarised as follows:
 * Strings (both ACII and UTF-8)
 * Raw binary (with distinction between file-data and just raw binary)
 
+# Example code
+
+
 # Format
 XDT is a binary-formatted format. I've made two diagrams which briefly explain the specification.
 ![Diagram Page 1](/img/Diagram_Page1.png)
-![Diagram Page 1](/img/Diagram_Page1.png)
+![Diagram Page 2](/img/Diagram_Page2.png)
