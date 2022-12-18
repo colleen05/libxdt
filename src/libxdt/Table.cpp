@@ -20,73 +20,73 @@ xdt::ItemType xdt::Table::GetItemType(std::string itemName) {
 }
 
 // Getters
-uint8_t xdt::Table::GetByte(std::string itemName) {
+uint8_t xdt::Table::GetByte(const std::string &itemName) {
     auto item = GetItem(itemName);
     return item ? item->GetByte() : 0x00;
 }
 
-bool xdt::Table::GetBool(std::string itemName) {
+bool xdt::Table::GetBool(const std::string &itemName) {
     auto item = GetItem(itemName);
     return item ? item->GetBool() : 0x00;
 }
 
-int16_t xdt::Table::GetInt16(std::string itemName) {
+int16_t xdt::Table::GetInt16(const std::string &itemName) {
     auto item = GetItem(itemName);
     return item ? item->GetInt16() : 0x00;
 }
 
-uint16_t xdt::Table::GetUint16(std::string itemName) {
+uint16_t xdt::Table::GetUint16(const std::string &itemName) {
     auto item = GetItem(itemName);
     return item ? item->GetUint16() : 0x00;
 }
 
-int32_t xdt::Table::GetInt32(std::string itemName) {
+int32_t xdt::Table::GetInt32(const std::string &itemName) {
     auto item = GetItem(itemName);
     return item ? item->GetInt32() : 0x00;
 }
 
-uint32_t xdt::Table::GetUint32(std::string itemName) {
+uint32_t xdt::Table::GetUint32(const std::string &itemName) {
     auto item = GetItem(itemName);
     return item ? item->GetUint32() : 0x00;
 }
 
-int64_t xdt::Table::GetInt64(std::string itemName) {
+int64_t xdt::Table::GetInt64(const std::string &itemName) {
     auto item = GetItem(itemName);
     return item ? item->GetInt64() : 0x00;
 }
 
-uint64_t xdt::Table::GetUint64(std::string itemName) {
+uint64_t xdt::Table::GetUint64(const std::string &itemName) {
     auto item = GetItem(itemName);
     return item ? item->GetUint64() : 0x00;
 }
 
-float xdt::Table::GetFloat(std::string itemName) {
+float xdt::Table::GetFloat(const std::string &itemName) {
     auto item = GetItem(itemName);
     return item ? item->GetFloat() : 0x00;
 }
 
-double xdt::Table::GetDouble(std::string itemName) {
+double xdt::Table::GetDouble(const std::string &itemName) {
     auto item = GetItem(itemName);
     return item ? item->GetDouble() : 0x00;
 }
 
-std::chrono::seconds xdt::Table::GetTimestamp(std::string itemName) {
+std::chrono::seconds xdt::Table::GetTimestamp(const std::string &itemName) {
     auto item = GetItem(itemName);
     return item ? item->GetTimestamp() : std::chrono::seconds(0);
 }
 
-std::string xdt::Table::GetString(std::string itemName, bool asHex) {
+std::string xdt::Table::GetString(const std::string &itemName, bool asHex) {
     auto item = GetItem(itemName);
     return item ? item->GetString(asHex) : "";
 }
 
-std::vector<uint8_t> xdt::Table::GetBytes(std::string itemName) {
+std::vector<uint8_t> xdt::Table::GetBytes(const std::string &itemName) {
     auto item = GetItem(itemName);
     return item ? item->GetBytes() : std::vector<uint8_t>();
 }
 
 // Setters
-void xdt::Table::SetByte(std::string itemName, uint8_t value, bool overwriteType) {
+void xdt::Table::SetByte(const std::string &itemName, uint8_t value, bool overwriteType) {
     auto item = GetItem(itemName);
 
     if(item == nullptr) {
@@ -98,7 +98,7 @@ void xdt::Table::SetByte(std::string itemName, uint8_t value, bool overwriteType
     }
 }
 
-void xdt::Table::SetBool(std::string itemName, bool value, bool overwriteType) {
+void xdt::Table::SetBool(const std::string &itemName, bool value, bool overwriteType) {
     auto item = GetItem(itemName);
 
     if(item == nullptr) {
@@ -110,7 +110,7 @@ void xdt::Table::SetBool(std::string itemName, bool value, bool overwriteType) {
     }
 }
 
-void xdt::Table::SetInt16(std::string itemName, int16_t value, bool overwriteType) {
+void xdt::Table::SetInt16(const std::string &itemName, int16_t value, bool overwriteType) {
     auto item = GetItem(itemName);
 
     if(item == nullptr) {
@@ -122,7 +122,7 @@ void xdt::Table::SetInt16(std::string itemName, int16_t value, bool overwriteTyp
     }
 }
 
-void xdt::Table::SetUint16(std::string itemName, uint16_t value, bool overwriteType) {
+void xdt::Table::SetUint16(const std::string &itemName, uint16_t value, bool overwriteType) {
     auto item = GetItem(itemName);
 
     if(item == nullptr) {
@@ -134,7 +134,7 @@ void xdt::Table::SetUint16(std::string itemName, uint16_t value, bool overwriteT
     }
 }
 
-void xdt::Table::SetInt32(std::string itemName, int32_t value, bool overwriteType) {
+void xdt::Table::SetInt32(const std::string &itemName, int32_t value, bool overwriteType) {
     auto item = GetItem(itemName);
 
     if(item == nullptr) {
@@ -146,7 +146,7 @@ void xdt::Table::SetInt32(std::string itemName, int32_t value, bool overwriteTyp
     }
 }
 
-void xdt::Table::SetUint32(std::string itemName, uint32_t value, bool overwriteType) {
+void xdt::Table::SetUint32(const std::string &itemName, uint32_t value, bool overwriteType) {
     auto item = GetItem(itemName);
 
     if(item == nullptr) {
@@ -158,7 +158,7 @@ void xdt::Table::SetUint32(std::string itemName, uint32_t value, bool overwriteT
     }
 }
 
-void xdt::Table::SetInt64(std::string itemName, int64_t value, bool overwriteType) {
+void xdt::Table::SetInt64(const std::string &itemName, int64_t value, bool overwriteType) {
     auto item = GetItem(itemName);
 
     if(item == nullptr) {
@@ -170,7 +170,7 @@ void xdt::Table::SetInt64(std::string itemName, int64_t value, bool overwriteTyp
     }
 }
 
-void xdt::Table::SetUint64(std::string itemName, uint64_t value, bool overwriteType) {
+void xdt::Table::SetUint64(const std::string &itemName, uint64_t value, bool overwriteType) {
     auto item = GetItem(itemName);
 
     if(item == nullptr) {
@@ -182,7 +182,7 @@ void xdt::Table::SetUint64(std::string itemName, uint64_t value, bool overwriteT
     }
 }
 
-void xdt::Table::SetFloat(std::string itemName, float value, bool overwriteType) {
+void xdt::Table::SetFloat(const std::string &itemName, float value, bool overwriteType) {
     auto item = GetItem(itemName);
 
     if(item == nullptr) {
@@ -194,7 +194,7 @@ void xdt::Table::SetFloat(std::string itemName, float value, bool overwriteType)
     }
 }
 
-void xdt::Table::SetDouble(std::string itemName, double value, bool overwriteType) {
+void xdt::Table::SetDouble(const std::string &itemName, double value, bool overwriteType) {
     auto item = GetItem(itemName);
 
     if(item == nullptr) {
@@ -206,7 +206,7 @@ void xdt::Table::SetDouble(std::string itemName, double value, bool overwriteTyp
     }
 }
 
-void xdt::Table::SetTimestamp(std::string itemName, std::chrono::seconds value, bool isLong, bool overwriteType) {
+void xdt::Table::SetTimestamp(const std::string &itemName, std::chrono::seconds value, bool isLong, bool overwriteType) {
     auto item = GetItem(itemName);
 
     if(item == nullptr) {
@@ -218,7 +218,7 @@ void xdt::Table::SetTimestamp(std::string itemName, std::chrono::seconds value, 
     }
 }
 
-void xdt::Table::SetString(std::string itemName, std::string value, bool isUTF8, bool overwriteType) {
+void xdt::Table::SetString(const std::string &itemName, const std::string &value, bool isUTF8, bool overwriteType) {
     auto item = GetItem(itemName);
 
     if(item == nullptr) {
@@ -230,7 +230,7 @@ void xdt::Table::SetString(std::string itemName, std::string value, bool isUTF8,
     }
 }
 
-void xdt::Table::SetBytes(std::string itemName, std::vector<uint8_t> value, bool isFileData, bool overwriteType) {
+void xdt::Table::SetBytes(const std::string &itemName, const std::vector<uint8_t> &value, bool isFileData, bool overwriteType) {
     auto item = GetItem(itemName);
 
     if(item == nullptr) {
@@ -327,7 +327,7 @@ std::vector<uint8_t> xdt::Table::Serialise() {
     return xdtData;
 }
 
-bool xdt::Table::Deserialise(std::vector<uint8_t> data) {
+bool xdt::Table::Deserialise(const std::vector<uint8_t> &data) {
     if(data.empty()) {
         errorStatus = "Empty data vector.";
         return false;
@@ -495,7 +495,7 @@ bool xdt::Table::Deserialise(std::vector<uint8_t> data) {
 }
 
 // File IO
-void xdt::Table::Save(std::string filename) {
+void xdt::Table::Save(const std::string &filename) {
     auto outBytes = Serialise();
 
     std::ofstream f(filename, std::ios::binary);
@@ -504,7 +504,7 @@ void xdt::Table::Save(std::string filename) {
     f.close();
 }
 
-bool xdt::Table::Load(std::string filename) {
+bool xdt::Table::Load(const std::string &filename) {
     std::ifstream f("out.xdt", std::ios::binary);
 
     auto inBytes = std::vector<uint8_t>(
@@ -518,11 +518,11 @@ bool xdt::Table::Load(std::string filename) {
 }
 
 // Constructors
-xdt::Table::Table(std::vector<uint8_t> data) {
+xdt::Table::Table(const std::vector<uint8_t> &data) {
     Deserialise(data);
 }
 
-xdt::Table::Table(std::string filename) {
+xdt::Table::Table(const std::string &filename) {
     Load(filename);
 }
 

@@ -422,7 +422,7 @@ void xdt::Item::SetTimestamp(std::chrono::seconds value, bool isLong, bool overw
     }
 }
 
-void xdt::Item::SetString(std::string value, bool isUTF8, bool overwriteType) {
+void xdt::Item::SetString(const std::string &value, bool isUTF8, bool overwriteType) {
     if(overwriteType) type = isUTF8 ? ItemType::UTF8String : ItemType::ASCIIString;
     if(isUTF8) { if(type != ItemType::UTF8String)  return; }
     else       { if(type != ItemType::ASCIIString) return; }
@@ -433,14 +433,14 @@ void xdt::Item::SetString(std::string value, bool isUTF8, bool overwriteType) {
     }
 }
 
-void xdt::Item::SetBytes(std::vector<uint8_t> value, bool isFileData, bool overwriteType) {
+void xdt::Item::SetBytes(const std::vector<uint8_t> &value, bool isFileData, bool overwriteType) {
     if(overwriteType) type = isFileData ? ItemType::File : ItemType::Raw;
     if(isFileData)  { if(type != ItemType::File)  return; }
     else            { if(type != ItemType::Raw)   return; }
 
     data.clear();
-    for(auto c : value) {
-        data.push_back(c);
+    for(auto b : value) {
+        data.push_back(b);
     }
 }
 
