@@ -505,7 +505,7 @@ void xdt::Table::Save(const std::string &filename) {
 }
 
 bool xdt::Table::Load(const std::string &filename) {
-    std::ifstream f("out.xdt", std::ios::binary);
+    std::ifstream f(filename, std::ios::binary);
 
     auto inBytes = std::vector<uint8_t>(
         std::istreambuf_iterator<char>(f),
