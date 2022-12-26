@@ -1,7 +1,7 @@
 #include <libxdt.hpp>
 
 // General item stuff
-xdt::Item *xdt::Table::GetItem(std::string itemName) {
+xdt::Item *xdt::Table::GetItem(const std::string &itemName) {
     for(auto &[name, item] : directory) {
         if(name == itemName) return &item;
     }
@@ -9,14 +9,20 @@ xdt::Item *xdt::Table::GetItem(std::string itemName) {
     return nullptr;
 }
 
-bool xdt::Table::ItemExists(std::string itemName) {
+bool xdt::Table::ItemExists(const std::string &itemName) {
     return (GetItem(itemName) != nullptr);
 }
 
-xdt::ItemType xdt::Table::GetItemType(std::string itemName) {
+xdt::ItemType xdt::Table::GetItemType(const std::string &itemName) {
     auto item = GetItem(itemName);
 
     return item ? item->type : xdt::ItemType::Byte;
+}
+
+void xdt::Table::DeleteItem(const std::string &itemName) {
+    for(auto it = directory.begin(); it < directory.end(); it++) {
+        if(it->first == itemName) directory.erase(it);
+    }
 }
 
 // Getters
@@ -496,18 +502,17 @@ bool xdt::Table::Deserialise(const std::vector<uint8_t> &data) {
 
 // File IO
 void xdt::Table::Save(const std::string &filename) {
-    auto outBytes = Serialise();
+    const auto outBytes = Serialise();
 
     std::ofstream f(filename, std::ios::binary);
-    for(auto b : outBytes) { f << b; }
-
+    f.write(reinterpret_cast<const char*>(outBytes.data()), outBytes.size());
     f.close();
 }
 
 bool xdt::Table::Load(const std::string &filename) {
     std::ifstream f(filename, std::ios::binary);
 
-    auto inBytes = std::vector<uint8_t>(
+    const auto inBytes = std::vector<uint8_t>(
         std::istreambuf_iterator<char>(f),
         std::istreambuf_iterator<char>()
     );

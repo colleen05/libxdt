@@ -162,9 +162,10 @@ namespace xdt {
             std::vector<std::pair<std::string, Item>> directory; //!< The container for all items, indexed by name.
 
             // General item stuff
-            xdt::Item *GetItem(std::string itemName); //!< Returns pointer to item if found
-            bool ItemExists(std::string itemName); //!< Returns **true** if item is found
-            xdt::ItemType GetItemType(std::string itemName); //!< Returns type of item if found
+            xdt::Item       *GetItem    (const std::string &itemName); //!< Returns pointer to item if found.
+            bool            ItemExists  (const std::string &itemName); //!< Returns **true** if item is found.
+            xdt::ItemType   GetItemType (const std::string &itemName); //!< Returns type of item if found.
+            void            DeleteItem  (const std::string &itemName); //!< Delete item by name.
 
             // Getters
             uint8_t     GetByte     (const std::string &itemName); //!< Returns value casted to a byte, **0x00** if types are incompatible.
