@@ -99,6 +99,7 @@ void xdt::Table::SetByte(const std::string &itemName, uint8_t value, bool overwr
         item = new Item {};
         item->SetByte(value, true);
         directory.push_back(std::make_pair(itemName, *item));
+        delete item;
     }else {
         item->SetByte(value, overwriteType);
     }
@@ -111,6 +112,7 @@ void xdt::Table::SetBool(const std::string &itemName, bool value, bool overwrite
         item = new Item {};
         item->SetBool(value, true);
         directory.push_back(std::make_pair(itemName, *item));
+        delete item;
     }else {
         item->SetBool(value, overwriteType);
     }
@@ -123,6 +125,7 @@ void xdt::Table::SetInt16(const std::string &itemName, int16_t value, bool overw
         item = new Item {};
         item->SetInt16(value, true);
         directory.push_back(std::make_pair(itemName, *item));
+        delete item;
     }else {
         item->SetInt16(value, overwriteType);
     }
@@ -135,6 +138,7 @@ void xdt::Table::SetUint16(const std::string &itemName, uint16_t value, bool ove
         item = new Item {};
         item->SetUint16(value, true);
         directory.push_back(std::make_pair(itemName, *item));
+        delete item;
     }else {
         item->SetUint16(value, overwriteType);
     }
@@ -147,6 +151,7 @@ void xdt::Table::SetInt32(const std::string &itemName, int32_t value, bool overw
         item = new Item {};
         item->SetInt32(value, true);
         directory.push_back(std::make_pair(itemName, *item));
+        delete item;
     }else {
         item->SetInt32(value, overwriteType);
     }
@@ -159,6 +164,7 @@ void xdt::Table::SetUint32(const std::string &itemName, uint32_t value, bool ove
         item = new Item {};
         item->SetUint32(value, true);
         directory.push_back(std::make_pair(itemName, *item));
+        delete item;
     }else {
         item->SetUint32(value, overwriteType);
     }
@@ -171,6 +177,7 @@ void xdt::Table::SetInt64(const std::string &itemName, int64_t value, bool overw
         item = new Item {};
         item->SetInt64(value, true);
         directory.push_back(std::make_pair(itemName, *item));
+        delete item;
     }else {
         item->SetInt64(value, overwriteType);
     }
@@ -183,6 +190,7 @@ void xdt::Table::SetUint64(const std::string &itemName, uint64_t value, bool ove
         item = new Item {};
         item->SetUint64(value, true);
         directory.push_back(std::make_pair(itemName, *item));
+        delete item;
     }else {
         item->SetUint64(value, overwriteType);
     }
@@ -195,6 +203,7 @@ void xdt::Table::SetFloat(const std::string &itemName, float value, bool overwri
         item = new Item {};
         item->SetFloat(value, true);
         directory.push_back(std::make_pair(itemName, *item));
+        delete item;
     }else {
         item->SetFloat(value, overwriteType);
     }
@@ -207,6 +216,7 @@ void xdt::Table::SetDouble(const std::string &itemName, double value, bool overw
         item = new Item {};
         item->SetDouble(value, true);
         directory.push_back(std::make_pair(itemName, *item));
+        delete item;
     }else {
         item->SetDouble(value, overwriteType);
     }
@@ -219,6 +229,7 @@ void xdt::Table::SetTimestamp(const std::string &itemName, std::chrono::seconds 
         item = new Item {};
         item->SetTimestamp(value, isLong, true);
         directory.push_back(std::make_pair(itemName, *item));
+        delete item;
     }else {
         item->SetTimestamp(value, isLong, overwriteType);
     }
@@ -231,6 +242,7 @@ void xdt::Table::SetString(const std::string &itemName, const std::string &value
         item = new Item {};
         item->SetString(value, isUTF8, true);
         directory.push_back(std::make_pair(itemName, *item));
+        delete item;
     }else {
         item->SetString(value, isUTF8, overwriteType);
     }
@@ -243,6 +255,7 @@ void xdt::Table::SetBytes(const std::string &itemName, const std::vector<uint8_t
         item = new Item {};
         item->SetBytes(value, isFileData, true);
         directory.push_back(std::make_pair(itemName, *item));
+        delete item;
     }else {
         item->SetBytes(value, isFileData, overwriteType);
     }
