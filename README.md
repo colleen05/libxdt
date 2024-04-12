@@ -14,6 +14,10 @@
 # About
 The **LibXDT** C++ library provides functionality for reading, writing, and modifying XDT (e**X**tensive **D**ata **T**able) files. XDT is the successor to the [BSM](https://github.com/colleen05/bsmlib) format.
 
+## :warning: :rotating_light: DISCONTINUED C++ PROJECT :rotating_light: :warning:
+I'm no longer using C++ for personal projects, thus this project's development has been discontinued.
+Check my GitHub or [**my website**](https://colleen05.me/) for projects coming in the future.
+
 # Features
 XDT compiles multiple data objects and values (collectively, "items") into a sort of "table" or "dictionary", where each item is given a name (up to **256 characters**). XDT supports up to **65536 items**. Some items are considered **BLOBs**, which stands for Binary Large OBjects, which are allowed to be up to **4GB in size**. Simple items under 4 bytes in data-length get their values stored next to them in the directory, whereas BLOBs and larger values (such as long timestamps and doubles) get their value stored as a BLOB.
 
